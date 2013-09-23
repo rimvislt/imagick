@@ -6690,7 +6690,7 @@ void s_add_named_strings (zval *array, const char *haystack TSRMLS_DC)
 */
 PHP_METHOD(imagick, identifyimage)
 {
-	char *identify;
+	char *identify, *filename, *signature;
 	php_imagick_object *intern;
 	zend_bool append_raw_string = 0;
 	zval *array;
@@ -6713,7 +6713,8 @@ PHP_METHOD(imagick, identifyimage)
 	array_init(return_value);
 
     // Name of the image
-	s_add_assoc_str (return_value, "imageName", MagickGetImageFilename (intern->magick_wand), 1);
+	filename = MagickGetImageFilename (intern->magick_wand);
+	s_add_assoc_str (return_value, "imageName", filename, 1);
 	s_add_named_strings (return_value, identify TSRMLS_CC);
 
 	// Geometry is an associative array
@@ -6732,12 +6733,15 @@ PHP_METHOD(imagick, identifyimage)
 	    add_assoc_double (array, "y", y);
 	    add_assoc_zval (return_value, "resolution", array);
 	}
-	s_add_assoc_str (return_value, "signature", MagickGetImageSignature (intern->magick_wand), 1);
+	signature = MagickGetImageSignature (intern->magick_wand);
+	s_add_assoc_str (return_value, "signature", signature, 1);
 
 	if (append_raw_string == 1)
 		add_assoc_string (return_value, "rawOutput", identify, 1);
 
+	IMAGICK_FREE_MEMORY(char *, filename);
 	IMAGICK_FREE_MEMORY(char *, identify);
+	IMAGICK_FREE_MEMORY(char *, signature);
 	return;
 }
 /* }}} */
