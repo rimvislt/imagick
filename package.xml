@@ -34,6 +34,7 @@ IMPORTANT: Version 2.x API is not compatible with earlier versions.
 <notes>
 - Fix ZTS build
 - Fix small memory leak in identifyImage
+- Added LICENSE
 </notes>
 	<contents>
 		<dir name="/">
