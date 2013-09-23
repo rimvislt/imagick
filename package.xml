@@ -33,6 +33,7 @@ IMPORTANT: Version 2.x API is not compatible with earlier versions.
 	<license uri="http://www.php.net/license">PHP License</license>
 <notes>
 - Fix ZTS build
+- Fix small memory leak in identifyImage
 </notes>
 	<contents>
 		<dir name="/">
@@ -57,6 +58,7 @@ IMPORTANT: Version 2.x API is not compatible with earlier versions.
 			<file name="TODO" role="doc" />
 			<file name="INSTALL" role="doc" />
 			<file name="ChangeLog" role="doc" />
+			<file name="LICENSE" role="doc" />
 			<dir name="examples">
 				<file name="polygon.php" role="doc" />
 				<file name="captcha.php" role="doc" />
