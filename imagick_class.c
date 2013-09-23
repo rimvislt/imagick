@@ -6637,7 +6637,7 @@ void s_add_assoc_str (zval *array, const char *key, const char *value, int copy)
 }
 
 static
-void s_add_named_strings (zval *array, const char *haystack)
+void s_add_named_strings (zval *array, const char *haystack TSRMLS_DC)
 {
 	int done = 0;
 	char *line, *last_ptr = NULL, *buffer;
@@ -6714,7 +6714,7 @@ PHP_METHOD(imagick, identifyimage)
 
     // Name of the image
 	s_add_assoc_str (return_value, "imageName", MagickGetImageFilename (intern->magick_wand), 1);
-	s_add_named_strings (return_value, identify);
+	s_add_named_strings (return_value, identify TSRMLS_CC);
 
 	// Geometry is an associative array
 	MAKE_STD_ZVAL (array);
