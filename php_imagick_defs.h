@@ -872,8 +872,10 @@ PHP_METHOD(imagick, colordecisionlistimage);
 #endif
 
 PHP_METHOD(imagick, autogammaimage);
+#if MagickLibVersion >= 0x692
 PHP_METHOD(imagick, autoorient);
 PHP_METHOD(imagick, compositeimagegravity);
+#endif // #if MagickLibVersion >= 0x692
 PHP_METHOD(imagick, localcontrastimage);
 
 /* Forward declarations (ImagickDraw) */
