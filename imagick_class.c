@@ -12633,7 +12633,7 @@ PHP_METHOD(imagick, colordecisionlistimage)
 /* }}} */
 
 
-#if MagickLibVersion >= 0x692
+
 /* {{{ proto bool Imagick::autoGammaImage([int channel = CHANNEL_ALL])
 	Extracts the 'mean' from the image and adjust the image to try make set its gamma appropriately.
 */
@@ -12662,8 +12662,8 @@ PHP_METHOD(imagick, autogammaimage)
 	RETURN_TRUE;
 }
 /* }}} */
-#endif // #if MagickLibVersion >= 0x692
 
+#if MagickLibVersion >= 0x692
 /* {{{ proto bool Imagick::autoOrient()
 	Adjusts an image so that its orientation is suitable $ for viewing (i.e. top-left orientation).
 */
@@ -12691,6 +12691,7 @@ PHP_METHOD(imagick, autoorient)
 	RETURN_TRUE;
 }
 /* }}} */
+#endif // #if MagickLibVersion >= 0x692
 
 #if MagickLibVersion >= 0x692
 /* {{{ proto bool Imagick::compositeImageGravity(Imagick $image, COMPOSITE_CONSTANT, int GRAVITY_CONSTANT)
