@@ -1449,6 +1449,21 @@ PHP_IMAGICK_API zend_class_entry *php_imagickpixel_get_class_entry()
 		ZEND_ARG_INFO(0, antialias)
 	ZEND_END_ARG_INFO()
 
+	ZEND_BEGIN_ARG_INFO_EX(imagick_autogammaimage_args, 0, 0, 1)
+		ZEND_ARG_INFO(0, CHANNEL)
+	ZEND_END_ARG_INFO()
+
+	ZEND_BEGIN_ARG_INFO_EX(imagick_compositeimagegravity_args, 0, 0, 3)
+		ZEND_ARG_OBJ_INFO(0, Imagick, Imagick, 0)
+		ZEND_ARG_INFO(0, COMPOSITE)
+		ZEND_ARG_INFO(0, GRAVITY)
+	ZEND_END_ARG_INFO()
+
+	ZEND_BEGIN_ARG_INFO_EX(imagick_localContrastImage_args, 0, 0, 2)
+		ZEND_ARG_INFO(0, radius)
+		ZEND_ARG_INFO(0, strength)
+	ZEND_END_ARG_INFO()
+
 /* ImagickDraw */
 #if MagickLibVersion > 0x649
 	ZEND_BEGIN_ARG_INFO_EX(imagickdraw_settextkerning_args, 0, 0, 1)
@@ -2675,6 +2690,11 @@ static zend_function_entry php_imagick_class_methods[] =
 #if MagickLibVersion > 0x676
 	PHP_ME(imagick, colordecisionlistimage, imagick_colordecisionlistimage_args, ZEND_ACC_PUBLIC)
 #endif
+
+PHP_ME(imagick, autogammaimage, imagick_autogammaimage_args, ZEND_ACC_PUBLIC)
+PHP_ME(imagick, autoorient, imagick_zero_args, ZEND_ACC_PUBLIC)
+PHP_ME(imagick, compositeimagegravity, imagick_compositeimagegravity_args, ZEND_ACC_PUBLIC)
+PHP_ME(imagick, localcontrastimage, imagick_localContrastImage_args, ZEND_ACC_PUBLIC)
 
 	{ NULL, NULL, NULL }
 };

@@ -871,6 +871,10 @@ PHP_METHOD(imagick, getantialias);
 PHP_METHOD(imagick, colordecisionlistimage);
 #endif
 
+PHP_METHOD(imagick, autogammaimage);
+PHP_METHOD(imagick, autoorient);
+PHP_METHOD(imagick, compositeimagegravity);
+PHP_METHOD(imagick, localcontrastimage);
 
 /* Forward declarations (ImagickDraw) */
 #if MagickLibVersion > 0x628

@@ -1,3 +1,10 @@
+3.4.1-dev
+  - Added:
+  * Imagick::autoGammaImage([int channel = CHANNEL_ALL])
+  * Imagick::autoOrient()
+  * Imagick::compositeImageGravity(Imagick $image, int COMPOSITE_CONSTANT, int GRAVITY_CONSTANT)
+  * Imagick::localContrastImage(float radius, float strength)
+
 3.4.0
   No changes from 3.4.0RC6.
 
