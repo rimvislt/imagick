@@ -1885,6 +1885,10 @@ PHP_IMAGICK_API zend_class_entry *php_imagickpixel_get_class_entry()
 		ZEND_ARG_INFO(0, direction)
 	ZEND_END_ARG_INFO()
 
+	ZEND_BEGIN_ARG_INFO_EX(imagickdraw_setdensity_args, 0, 0, 1)
+		ZEND_ARG_INFO(0, density)
+	ZEND_END_ARG_INFO()
+
 /* ImagickPixel */
 #if MagickLibVersion > 0x628
 	ZEND_BEGIN_ARG_INFO_EX(imagickpixel_sethsl_args, 0, 0, 3)
@@ -2130,7 +2134,8 @@ static zend_function_entry php_imagickdraw_class_methods[] =
 	PHP_ME(imagickdraw, setbordercolor, imagickdraw_setbordercolor_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, gettextdirection, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, settextdirection, imagickdraw_settextdirection_args, ZEND_ACC_PUBLIC)
-
+	PHP_ME(imagickdraw, setdensity, imagickdraw_setdensity_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, getdensity, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	{ NULL, NULL, NULL }
 };
 

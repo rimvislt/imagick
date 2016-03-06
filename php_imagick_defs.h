@@ -300,8 +300,11 @@ static inline php_imagickkernel_object *php_imagickkernel_fetch_object(zend_obje
 // String access
 #ifdef ZEND_ENGINE_3
 	#define IM_ZVAL_STRING(zv, charstar) ZVAL_STRING(zv, charstar);
+	#define IM_RETURN_STRING(s) RETURN_STRING(s)
 #else
 	#define IM_ZVAL_STRING(zv, charstar) ZVAL_STRING(zv, charstar, 1);
+	//RETURN_STRING(s, duplicate) 
+	#define IM_RETURN_STRING(s) RETURN_STRING(s, 0)
 #endif
 
 #ifdef ZEND_ENGINE_3
@@ -1024,6 +1027,8 @@ PHP_METHOD(imagickdraw, getbordercolor);
 PHP_METHOD(imagickdraw, setbordercolor);
 PHP_METHOD(imagickdraw, gettextdirection);
 PHP_METHOD(imagickdraw, settextdirection);
+PHP_METHOD(imagickdraw, setdensity);
+PHP_METHOD(imagickdraw, getdensity);
 
 /* Imagick Pixel iterator */
 PHP_METHOD(imagickpixeliterator, __construct);

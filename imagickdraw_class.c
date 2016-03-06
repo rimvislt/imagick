@@ -3019,5 +3019,59 @@ PHP_METHOD(imagickdraw, settextdirection)
 /* }}} */
 
 
+/* {{{ proto bool ImagickDraw::setDensity(string density_string)
+	Sets the vertical and horizontal resolution.
+*/
+PHP_METHOD(imagickdraw, setdensity)
+{
+	zval *param;
+	php_imagickdraw_object *internd;
+	char *density;
+	IM_LEN_TYPE density_len;
+	MagickBooleanType status;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &density, &density_len) == FAILURE) {
+		return;
+	}
+
+	internd = Z_IMAGICKDRAW_P(getThis());
+	status = DrawSetDensity(internd->drawing_wand, density);
+
+	if (status == MagickFalse) {
+		php_imagick_convert_imagickdraw_exception (internd->drawing_wand, "Unable to setdensity for ImagickDraw object" TSRMLS_CC);
+		return;
+	}
+
+	RETURN_TRUE;
+}
+/* }}} */
+
+
+/* {{{ proto string|null ImagickDraw::getDensity()
+	Obtains the vertical and horizontal resolution. 
+*/
+PHP_METHOD(imagickdraw, getdensity)
+{
+	php_imagickdraw_object *internd;
+	char *density;
+
+	if (zend_parse_parameters_none() == FAILURE) {
+		return;
+	}
+
+	internd = Z_IMAGICKDRAW_P(getThis());
+	density = DrawGetDensity(internd->drawing_wand);
+
+//	printf("String is at %x\n", density);
+
+	if (density == NULL) {
+		RETURN_NULL();
+	}
+	else {
+		IM_RETURN_STRING(density);
+	}
+}
+/* }}} */
+
 
 /* END OF DRAWINGWAND METHODS */

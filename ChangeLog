@@ -14,6 +14,8 @@
   * ImagickDraw::setTextDirection(int direction) : bool
   * ImagickPixel ImagickDraw::getBorderColor()
   * ImagickDraw::setBorderColor(ImagickPixel color) : bool
+  * ImagickDraw::getDensity(): string|null
+  * ImagickDraw::setDensity(string density_string): bool
 
 3.4.0
   No changes from 3.4.0RC6.
