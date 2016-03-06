@@ -311,6 +311,7 @@ static inline php_imagickkernel_object *php_imagickkernel_fetch_object(zend_obje
 	#define IM_LEN_TYPE size_t
 #else
 	#define IM_add_assoc_string(zv, key, charstr) add_assoc_string(zv, key, charstr, 1)
+	#define IM_add_assoc_string(zv, key, charstr) add_assoc_string(zv, key, charstr, 1)
 	#define IM_ZVAL_STRINGL(zv, charstr, length) ZVAL_STRINGL(zv, charstr, length, 1)
 	#define IM_add_next_index_string(zv, charstr) add_next_index_string(zv, charstr, 1)
 	#define IM_add_next_index_zval(zv1, zv2)
@@ -1015,6 +1016,14 @@ PHP_METHOD(imagickdraw, setstrokeopacity);
 PHP_METHOD(imagickdraw, setvectorgraphics);
 PHP_METHOD(imagickdraw, pop);
 PHP_METHOD(imagickdraw, push);
+PHP_METHOD(imagickdraw, getopacity);
+PHP_METHOD(imagickdraw, setopacity);
+PHP_METHOD(imagickdraw, getfontresolution);
+PHP_METHOD(imagickdraw, setfontresolution);
+PHP_METHOD(imagickdraw, getbordercolor);
+PHP_METHOD(imagickdraw, setbordercolor);
+PHP_METHOD(imagickdraw, gettextdirection);
+PHP_METHOD(imagickdraw, settextdirection);
 
 /* Imagick Pixel iterator */
 PHP_METHOD(imagickpixeliterator, __construct);

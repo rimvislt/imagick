@@ -1868,6 +1868,23 @@ PHP_IMAGICK_API zend_class_entry *php_imagickpixel_get_class_entry()
 		ZEND_ARG_INFO(0, dashArray)
 	ZEND_END_ARG_INFO()
 
+	ZEND_BEGIN_ARG_INFO_EX(imagickdraw_setopacity_args, 0, 0, 1)
+		ZEND_ARG_INFO(0, opacity)
+	ZEND_END_ARG_INFO()
+
+	ZEND_BEGIN_ARG_INFO_EX(imagickdraw_setfontresolution_args, 0, 0, 2)
+		ZEND_ARG_INFO(0, x)
+		ZEND_ARG_INFO(0, y)
+	ZEND_END_ARG_INFO()
+
+	ZEND_BEGIN_ARG_INFO_EX(imagickdraw_setbordercolor_args, 0, 0, 1)
+		ZEND_ARG_INFO(0, bordercolor)
+	ZEND_END_ARG_INFO()
+
+	ZEND_BEGIN_ARG_INFO_EX(imagickdraw_settextdirection_args, 0, 0, 1)
+		ZEND_ARG_INFO(0, direction)
+	ZEND_END_ARG_INFO()
+
 /* ImagickPixel */
 #if MagickLibVersion > 0x628
 	ZEND_BEGIN_ARG_INFO_EX(imagickpixel_sethsl_args, 0, 0, 3)
@@ -2105,6 +2122,15 @@ static zend_function_entry php_imagickdraw_class_methods[] =
 	PHP_ME(imagickdraw, pop, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, push, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, setstrokedasharray, imagickdraw_setstrokedasharray_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, getopacity, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, setopacity, imagickdraw_setopacity_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, getfontresolution, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, setfontresolution, imagickdraw_setfontresolution_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, getbordercolor, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, setbordercolor, imagickdraw_setbordercolor_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, gettextdirection, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
+	PHP_ME(imagickdraw, settextdirection, imagickdraw_settextdirection_args, ZEND_ACC_PUBLIC)
+
 	{ NULL, NULL, NULL }
 };
 
