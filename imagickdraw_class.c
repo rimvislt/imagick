@@ -3026,6 +3026,7 @@ PHP_METHOD(imagickdraw, settextdirection)
 /* }}} */
 #endif //#if MagickLibVersion >= 0x692
 
+#if MagickLibVersion >= 0x692
 /* {{{ proto bool ImagickDraw::setDensity(string density_string)
 	Sets the vertical and horizontal resolution.
 */
@@ -3078,6 +3079,7 @@ PHP_METHOD(imagickdraw, getdensity)
 	}
 }
 /* }}} */
+#endif// #if MagickLibVersion >= 0x692
 
 
 /* END OF DRAWINGWAND METHODS */

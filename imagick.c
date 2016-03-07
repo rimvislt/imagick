@@ -2132,14 +2132,18 @@ static zend_function_entry php_imagickdraw_class_methods[] =
 	PHP_ME(imagickdraw, setstrokedasharray, imagickdraw_setstrokedasharray_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, getopacity, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, setopacity, imagickdraw_setopacity_args, ZEND_ACC_PUBLIC)
-#if MagickLibVersion >= 0x695
+#if MagickLibVersion >= 0x675
 	PHP_ME(imagickdraw, getfontresolution, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, setfontresolution, imagickdraw_setfontresolution_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, getbordercolor, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, setbordercolor, imagickdraw_setbordercolor_args, ZEND_ACC_PUBLIC)
+#endif //#if MagickLibVersion >= 0x675
+
+#if MagickLibVersion >= 0x693
 	PHP_ME(imagickdraw, setdensity, imagickdraw_setdensity_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, getdensity, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
-#endif //#if MagickLibVersion >= 0x695
+#endif// #if MagickLibVersion >= 0x693
+
 #if MagickLibVersion >= 0x692
 	PHP_ME(imagickdraw, gettextdirection, imagickdraw_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickdraw, settextdirection, imagickdraw_settextdirection_args, ZEND_ACC_PUBLIC)

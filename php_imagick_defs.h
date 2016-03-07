@@ -1031,9 +1031,12 @@ PHP_METHOD(imagickdraw, getfontresolution);
 PHP_METHOD(imagickdraw, setfontresolution);
 PHP_METHOD(imagickdraw, getbordercolor);
 PHP_METHOD(imagickdraw, setbordercolor);
+#endif //#if MagickLibVersion >= 0x675
+
+#if MagickLibVersion >= 0x693
 PHP_METHOD(imagickdraw, setdensity);
 PHP_METHOD(imagickdraw, getdensity);
-#endif //#if MagickLibVersion >= 0x675
+#endif// #if MagickLibVersion >= 0x693
 
 #if MagickLibVersion >= 0x692
 PHP_METHOD(imagickdraw, gettextdirection);
