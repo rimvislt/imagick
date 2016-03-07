@@ -744,7 +744,7 @@ PHP_METHOD(imagickpixel, setcolorcount)
 }
 /* }}} */
 
-
+#if MagickLibVersion > 0x693
 /* {{{ proto bool ImagickPixel::setColorFromPixel(ImagickPixel $srcPixel)
 	Sets the color count associated with this color from another ImagickPixel object.
 */
@@ -766,3 +766,4 @@ PHP_METHOD(imagickpixel, setcolorfrompixel)
 }
 /* }}} */
 
+#endif //#if MagickLibVersion > 0x693

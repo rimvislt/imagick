@@ -1948,7 +1948,6 @@ PHP_IMAGICK_API zend_class_entry *php_imagickpixel_get_class_entry()
 		ZEND_ARG_OBJ_INFO(0, srcPixel, ImagickPixel, 0)
 	ZEND_END_ARG_INFO()
 
-
 /* ImagickPixelIterator */
 
 	ZEND_BEGIN_ARG_INFO_EX(imagickpixeliterator_zero_args, 0, 0, 0)
@@ -2213,9 +2212,10 @@ static zend_function_entry php_imagickpixel_class_methods[] =
 	PHP_ME(imagickpixel, getcolorcount, imagickpixel_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickpixel, setcolorcount, imagickpixel_setcolorcount_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagickpixel, clone, imagickpixel_zero_args, ZEND_ACC_PUBLIC)
+#if MagickLibVersion > 0x693
 	PHP_ME(imagickpixel, setcolorfrompixel, imagickpixel_setcolorfrompixel_args, ZEND_ACC_PUBLIC)
-	
-	
+#endif //#if MagickLibVersion > 0x693
+
 	{ NULL, NULL, NULL }
 };
 
