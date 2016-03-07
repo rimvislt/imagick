@@ -2864,7 +2864,7 @@ PHP_METHOD(imagickdraw, setopacity)
 }
 /* }}} */
 
-
+#if MagickLibVersion >= 0x675
 /* {{{ proto array ImagickDraw::getFontResolution() 
 	Gets the image X and Y resolution.
 */
@@ -2893,8 +2893,10 @@ PHP_METHOD(imagickdraw, getfontresolution)
 	return;
 }
 /* }}} */
+#endif //#if MagickLibVersion >= 0x675
 
 
+#if MagickLibVersion >= 0x675
 /* {{{ proto bool ImagickDraw::setFontResolution(float x, float y)
 	Sets the image font resolution.
 */
@@ -2920,8 +2922,10 @@ PHP_METHOD(imagickdraw, setfontresolution)
 	RETURN_TRUE;
 }
 /* }}} */
+#endif //#if MagickLibVersion >= 0x675
 
 
+#if MagickLibVersion >= 0x675
 /* {{{ proto ImagickPixel ImagickDraw::getBorderColor()
 	Returns the border color used for drawing bordered objects.
 */
@@ -2946,8 +2950,11 @@ PHP_METHOD(imagickdraw, getbordercolor)
 	return;
 }
 /* }}} */
+#endif //#if MagickLibVersion >= 0x675
 
 
+
+#if MagickLibVersion >= 0x675
 /* {{{ proto bool ImagickDraw::setBorderColor(ImagickPixel color)
 	Sets the border color to be used for drawing bordered objects.
 */
@@ -2975,8 +2982,9 @@ PHP_METHOD(imagickdraw, setbordercolor)
 	RETURN_TRUE;
 }
 /* }}} */
+#endif //#if MagickLibVersion >= 0x675
 
-
+#if MagickLibVersion >= 0x692
 /* {{{ proto bool ImagickDraw::getTextDirection()
 	Returns the direction that will be used when annotating with text.
 */
@@ -3017,7 +3025,7 @@ PHP_METHOD(imagickdraw, settextdirection)
 	RETURN_TRUE;
 }
 /* }}} */
-
+#endif //#if MagickLibVersion >= 0x692
 
 /* {{{ proto bool ImagickDraw::setDensity(string density_string)
 	Sets the vertical and horizontal resolution.

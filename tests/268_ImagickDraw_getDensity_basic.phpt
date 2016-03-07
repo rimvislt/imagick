@@ -1,7 +1,10 @@
 --TEST--
 Test ImagickDraw, getDensity
 --SKIPIF--
-<?php require_once(dirname(__FILE__) . '/skipif.inc'); ?>
+<?php
+require_once(dirname(__FILE__) . '/skipif.inc');
+checkClassMethods('ImagickDraw', array('getDensity', 'setDensity'));
+?>
 --XFAIL--
 Expected behaviour is not known :-p
 --FILE--

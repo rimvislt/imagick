@@ -1,7 +1,10 @@
 --TEST--
 Test ImagickDraw, getBorderColor
 --SKIPIF--
-<?php require_once(dirname(__FILE__) . '/skipif.inc'); ?>
+<?php
+require_once(dirname(__FILE__) . '/skipif.inc');
+checkClassMethods('ImagickDraw', array('getBorderColor', 'setBorderColor'));
+?>
 --FILE--
 <?php
 

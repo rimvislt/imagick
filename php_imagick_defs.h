@@ -1021,14 +1021,20 @@ PHP_METHOD(imagickdraw, pop);
 PHP_METHOD(imagickdraw, push);
 PHP_METHOD(imagickdraw, getopacity);
 PHP_METHOD(imagickdraw, setopacity);
+
+#if MagickLibVersion >= 0x675
 PHP_METHOD(imagickdraw, getfontresolution);
 PHP_METHOD(imagickdraw, setfontresolution);
 PHP_METHOD(imagickdraw, getbordercolor);
 PHP_METHOD(imagickdraw, setbordercolor);
-PHP_METHOD(imagickdraw, gettextdirection);
-PHP_METHOD(imagickdraw, settextdirection);
 PHP_METHOD(imagickdraw, setdensity);
 PHP_METHOD(imagickdraw, getdensity);
+#endif //#if MagickLibVersion >= 0x675
+
+#if MagickLibVersion >= 0x692
+PHP_METHOD(imagickdraw, gettextdirection);
+PHP_METHOD(imagickdraw, settextdirection);
+#endif //#if MagickLibVersion >= 0x692
 
 /* Imagick Pixel iterator */
 PHP_METHOD(imagickpixeliterator, __construct);
@@ -1072,9 +1078,9 @@ PHP_METHOD(imagickpixel, getcolorasstring);
 PHP_METHOD(imagickpixel, getcolorcount);
 PHP_METHOD(imagickpixel, setcolorcount);
 PHP_METHOD(imagickpixel, clone);
-#if MagickLibVersion > 0x693
+#if MagickLibVersion >= 0x693
 PHP_METHOD(imagickpixel, setcolorfrompixel);
-#endif //#if MagickLibVersion > 0x693
+#endif //#if MagickLibVersion >= 0x693
 
 #ifdef IMAGICK_WITH_KERNEL
 PHP_METHOD(imagickkernel, frommatrix);

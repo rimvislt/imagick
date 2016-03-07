@@ -1,7 +1,10 @@
 --TEST--
 Test ImagickDraw, getFontResolution
 --SKIPIF--
-<?php require_once(dirname(__FILE__) . '/skipif.inc'); ?>
+<?php
+require_once(dirname(__FILE__) . '/skipif.inc');
+checkClassMethods('ImagickDraw', array('getFontResolution', 'setFontResolution'));
+?>
 --FILE--
 <?php
 

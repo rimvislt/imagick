@@ -1,7 +1,10 @@
 --TEST--
 Test ImagickDraw, getTextDirection
 --SKIPIF--
-<?php require_once(dirname(__FILE__) . '/skipif.inc'); ?>
+<?php
+require_once(dirname(__FILE__) . '/skipif.inc');
+checkClassMethods('ImagickDraw', array('getTextDirection', 'setTextDirection'));
+?>
 --FILE--
 <?php
 
