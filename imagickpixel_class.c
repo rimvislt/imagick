@@ -758,7 +758,7 @@ PHP_METHOD(imagickpixel, setcolorfrompixel)
 	}
 
 	internp = Z_IMAGICKPIXEL_P(getThis());
-	src_pixel = Z_IMAGICK_P(objvar);
+	src_pixel = Z_IMAGICKPIXEL_P(objvar);
 
 	PixelSetColorFromWand(internp->pixel_wand, src_pixel->pixel_wand);
 

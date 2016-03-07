@@ -2902,7 +2902,6 @@ PHP_METHOD(imagickdraw, getfontresolution)
 */
 PHP_METHOD(imagickdraw, setfontresolution)
 {
-	zval *param;
 	php_imagickdraw_object *internd;
 	double x, y;
 
@@ -3032,7 +3031,6 @@ PHP_METHOD(imagickdraw, settextdirection)
 */
 PHP_METHOD(imagickdraw, setdensity)
 {
-	zval *param;
 	php_imagickdraw_object *internd;
 	char *density;
 	IM_LEN_TYPE density_len;

@@ -12633,7 +12633,7 @@ PHP_METHOD(imagick, colordecisionlistimage)
 /* }}} */
 
 
-
+#if MagickLibVersion >= 0x660
 /* {{{ proto bool Imagick::autoGammaImage([int channel = CHANNEL_ALL])
 	Extracts the 'mean' from the image and adjust the image to try make set its gamma appropriately.
 */
@@ -12662,6 +12662,7 @@ PHP_METHOD(imagick, autogammaimage)
 	RETURN_TRUE;
 }
 /* }}} */
+#endif //#if MagickLibVersion >= 0x660
 
 #if MagickLibVersion >= 0x692
 /* {{{ proto bool Imagick::autoOrient()
@@ -12737,7 +12738,6 @@ however the mask is instead created using an image with a greater blur distance.
 */
 PHP_METHOD(imagick, localcontrastimage)
 {
-	im_long width, height, new_width, new_height;
 	php_imagick_object *intern;
 	MagickBooleanType status;
 	double radius, strength;
@@ -12751,7 +12751,7 @@ PHP_METHOD(imagick, localcontrastimage)
 	if (php_imagick_ensure_not_empty (intern->magick_wand) == 0)
 		return;
 
-	status = MagickLocalContrastImage(intern->magick_wand, new_width, new_height);
+	status = MagickLocalContrastImage(intern->magick_wand, radius, strength);
 
 	/* No magick is going to happen */
 	if (status == MagickFalse) {

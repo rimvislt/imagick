@@ -875,7 +875,9 @@ PHP_METHOD(imagick, getantialias);
 PHP_METHOD(imagick, colordecisionlistimage);
 #endif
 
+#if MagickLibVersion >= 0x660
 PHP_METHOD(imagick, autogammaimage);
+#endif //#if MagickLibVersion >= 0x660
 #if MagickLibVersion >= 0x692
 PHP_METHOD(imagick, autoorient);
 PHP_METHOD(imagick, compositeimagegravity);
