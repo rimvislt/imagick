@@ -882,7 +882,9 @@ PHP_METHOD(imagick, autogammaimage);
 PHP_METHOD(imagick, autoorient);
 PHP_METHOD(imagick, compositeimagegravity);
 #endif // #if MagickLibVersion >= 0x692
+#if MagickLibVersion >= 0x692
 PHP_METHOD(imagick, localcontrastimage);
+#endif // #if MagickLibVersion >= 0x692
 
 /* Forward declarations (ImagickDraw) */
 #if MagickLibVersion > 0x628

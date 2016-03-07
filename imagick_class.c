@@ -12731,6 +12731,7 @@ PHP_METHOD(imagick, compositeimagegravity)
 /* }}} */
 #endif // #if MagickLibVersion >= 0x692
 
+#if MagickLibVersion >= 0x692
 /* {{{ proto bool Imagick::localContrastImage(float radius, float strength)
 Attempts to increase the appearance of large-scale light-dark transitions. 
 Local contrast enhancement works similarly to sharpening with an unsharp mask,
@@ -12762,6 +12763,7 @@ PHP_METHOD(imagick, localcontrastimage)
 	RETURN_TRUE;
 }
 /* }}} */
+#endif // #if MagickLibVersion >= 0x692
 
 
 /* end of Imagick */

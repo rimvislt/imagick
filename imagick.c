@@ -2742,7 +2742,9 @@ static zend_function_entry php_imagick_class_methods[] =
 	PHP_ME(imagick, autoorient, imagick_zero_args, ZEND_ACC_PUBLIC)
 	PHP_ME(imagick, compositeimagegravity, imagick_compositeimagegravity_args, ZEND_ACC_PUBLIC)
 #endif // #if MagickLibVersion >= 0x692
+#if MagickLibVersion >= 0x692
 	PHP_ME(imagick, localcontrastimage, imagick_localContrastImage_args, ZEND_ACC_PUBLIC)
+#endif // #if MagickLibVersion >= 0x692
 
 	{ NULL, NULL, NULL }
 };
