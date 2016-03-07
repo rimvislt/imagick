@@ -1643,6 +1643,9 @@ void php_imagick_initialize_constants(TSRMLS_D)
 #if MagickLibVersion >= 0x687
 	IMAGICK_REGISTER_CONST_LONG("SPARSECOLORMETHOD_INVERSE", InverseColorInterpolate);
 #endif
+#if MagickLibVersion >= 0x693
+	IMAGICK_REGISTER_CONST_LONG("SPARSECOLORMETHOD_MANHATTAN", ManhattanColorInterpolate);
+#endif
 	IMAGICK_REGISTER_CONST_LONG("DITHERMETHOD_UNDEFINED", UndefinedDitherMethod);
 	IMAGICK_REGISTER_CONST_LONG("DITHERMETHOD_NO", NoDitherMethod);
 	IMAGICK_REGISTER_CONST_LONG("DITHERMETHOD_RIEMERSMA", RiemersmaDitherMethod);

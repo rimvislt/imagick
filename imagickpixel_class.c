@@ -743,3 +743,26 @@ PHP_METHOD(imagickpixel, setcolorcount)
 	RETVAL_TRUE;
 }
 /* }}} */
+
+
+/* {{{ proto bool ImagickPixel::setColorFromPixel(ImagickPixel $srcPixel)
+	Sets the color count associated with this color from another ImagickPixel object.
+*/
+PHP_METHOD(imagickpixel, setcolorfrompixel)
+{
+	php_imagickpixel_object *internp, *src_pixel;
+	zval *objvar;
+
+	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "O", &objvar, php_imagickpixel_sc_entry) == FAILURE) {
+		return;
+	}
+
+	internp = Z_IMAGICKPIXEL_P(getThis());
+	src_pixel = Z_IMAGICK_P(objvar);
+
+	PixelSetColorFromWand(internp->pixel_wand, src_pixel->pixel_wand);
+
+	RETVAL_TRUE;
+}
+/* }}} */
+

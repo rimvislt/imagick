@@ -1072,6 +1072,7 @@ PHP_METHOD(imagickpixel, getcolorasstring);
 PHP_METHOD(imagickpixel, getcolorcount);
 PHP_METHOD(imagickpixel, setcolorcount);
 PHP_METHOD(imagickpixel, clone);
+PHP_METHOD(imagickpixel, setcolorfrompixel);
 
 #ifdef IMAGICK_WITH_KERNEL
 PHP_METHOD(imagickkernel, frommatrix);
