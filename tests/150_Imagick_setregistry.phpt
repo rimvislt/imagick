@@ -26,11 +26,18 @@ else if ($tmpPath == $currentPath) {
 $registry = Imagick::listRegistry();
 
 if (array_key_exists("temporary-path", $registry) == true) {
-
 	if ($registry["temporary-path"] === $currentPath) {
 		echo "Temporary path was listed correctly.".PHP_EOL;
 	}
 }
+
+
+// https://github.com/mkoppanen/imagick/issues/185
+// Calling Imagick::getRegistry() using a key that has not yet been set to the registry results in the following:
+$imagick = new Imagick();
+$imagick->setRegistry('temporary-path', '/home/vagrant');
+$imagick->getRegistry('temporary-path'); // "/home/vagrant"
+$imagick->getRegistry('this-is-a-non-existing-key');
 
 
 ?>
