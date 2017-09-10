@@ -6,6 +6,8 @@ cache:
     directories:
         - $HOME/im
 
+# group: deprecated-2017Q3
+
 php:
     - 7.1
 
@@ -43,6 +45,7 @@ matrix:
 before_script:
     - for file in tests/*.phpt; do grep $(basename $file) package.xml >/dev/null || (echo "Missing $file from package.xml" ; exit 1); done
     - bash ./imagemagick_dependency.sh "${IMAGEMAGICK_VERSION}"
+    - sudo apt-get -qq gdb
 
 script:
     - export NO_INTERACTION=1
