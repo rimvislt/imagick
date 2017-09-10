@@ -133,8 +133,10 @@ $kernel2 = ImagickKernel::fromMatrix($matrix2, array(0, 0));
 $kernel1->addKernel($kernel2);
 
 $kernelList = $kernel1->separate();
-if (count($kernelList) != 2) {
-	echo "Incorrect number of matrixes returned.";
+$kernelListCount = count($kernelList);
+
+if ($kernelListCount != 2) {
+	echo "Incorrect number of matrixes returned, expecting 2, but got $kernelListCount";
 }
 else {
 	if ($kernelList[0]->getMatrix() != $matrix1) {
