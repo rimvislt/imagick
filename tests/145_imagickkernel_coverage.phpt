@@ -129,7 +129,7 @@ $matrix2 = array(
 	array(1, 1),
 );
 $kernel1 = ImagickKernel::fromMatrix($matrix1, array(0, 0));
-$kernel2 = ImagickKernel::fromMatrix($matrix2, array(0, 0));
+$kernel2 = ImagickKernel::fromMatrix($matrix2, array(1, 1));
 $kernel1->addKernel($kernel2);
 
 $kernelList = $kernel1->separate();
@@ -137,6 +137,7 @@ $kernelListCount = count($kernelList);
 
 if ($kernelListCount != 2) {
 	echo "Incorrect number of matrixes returned, expecting 2, but got $kernelListCount";
+	var_dump($kernelList);
 }
 else {
 	if ($kernelList[0]->getMatrix() != $matrix1) {

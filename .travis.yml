@@ -46,7 +46,7 @@ before_script:
     - for file in tests/*.phpt; do grep $(basename $file) package.xml >/dev/null || (echo "Missing $file from package.xml" ; exit 1); done
     - bash ./imagemagick_dependency.sh "${IMAGEMAGICK_VERSION}"
     - sudo apt-get update -qq
-    - sudo apt-get install -qq gdb
+    - sudo apt-get install -qq gdb valgrind
 
 script:
     - export NO_INTERACTION=1
