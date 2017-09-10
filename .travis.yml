@@ -58,9 +58,8 @@ script:
     - phpize
     - ./configure --with-imagick="${HOME}/im/imagemagick-${IMAGEMAGICK_VERSION}"
     - make
-    - php run-tests.php -m -d extension=imagick.so -d extension_dir=modules -n ./*.phpt
-    - php run-tests.php -m -d extension=imagick.so -d extension_dir=modules -n ./tests/*.phpt
-    - gdb -batch -ex "run" -ex "bt" --args /home/travis/.phpenv/versions/7.1/bin/php -d extension=imagick.so -d extension_dir=modules segfault_test.php 2>&1
+    - gdb -batch -ex "run" -ex "bt" --args /home/travis/.phpenv/versions/7.1/bin/phpphp run-tests.php -m -d extension=imagick.so -d extension_dir=modules -n ./*.phpt
+    - gdb -batch -ex "run" -ex "bt" --args /home/travis/.phpenv/versions/7.1/bin/phpphp run-tests.php -m -d extension=imagick.so -d extension_dir=modules -n ./tests/*.phpt
     - for i in `ls tests/*.out 2>/dev/null`; do echo "-- START ${i}"; cat $i; echo "-- END"; done
     - php ./util/check_version.php
 
