@@ -3,7 +3,7 @@ ImagickKernel::fromMatrix test
 --SKIPIF--
 <?php 
 
-$imageMagickRequiredVersion=0x701;
+$imageMagickRequiredVersion=0x751;
 require_once(dirname(__FILE__) . '/skipif.inc');
  
 ?>
