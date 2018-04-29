@@ -82,18 +82,22 @@ $tests = array(
 			array('r', getExpectedValue(\Imagick::getQuantum()), 0),
 			array('a', getExpectedValue(\Imagick::getQuantum()), 0)
 		),
-	),
-	array(
-		'rgb(25%, 25%, 25%)',
-		QUANTUM,
-		array(
-			array('r', getExpectedValue(\Imagick::getQuantum() / 4), 0),
-			array('a', getExpectedValue(\Imagick::getQuantum()), 0),
-		)
 	)
 );
 
 $version = Imagick::getVersion();
+// The following don't seem stable in lesser versions.
+if ($version['versionNumber'] >= 0x6609) {
+    $tests[] = [
+        'rgb(25%, 25%, 25%)',
+        QUANTUM,
+        [
+            ['r', getExpectedValue(\Imagick::getQuantum() / 4), 0],
+            ['a', getExpectedValue(\Imagick::getQuantum()), 0],
+        ]
+    ]
+}
+
 // The following don't seem stable in lesser versions.
 if ($version['versionNumber'] >= 0x687) {
 	$tests[] = array(
