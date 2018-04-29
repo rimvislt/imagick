@@ -56,15 +56,17 @@ function getExpectedValue($someValue) {
 		return $someValue;
 	}
 
-	$v = Imagick::getVersion();
-	if ($v['versionNumber'] >= 0x689) {
+    return (intval(round($someValue, 0, PHP_ROUND_HALF_UP)));
+
+//	$v = Imagick::getVersion();
+//	if ($v['versionNumber'] >= 0x692) {
 		//this is the new correct behaviour
-		return (intval(round($someValue, 0, PHP_ROUND_HALF_UP)));
-	}
-	else {
+//		return (intval(round($someValue, 0, PHP_ROUND_HALF_UP)));
+//	}
+//	else {
 		//old behaviour had wrong rounding.
-		return (intval(round($someValue, 0, PHP_ROUND_HALF_DOWN)));
-	}
+//		return (intval(round($someValue, 0, PHP_ROUND_HALF_DOWN)));
+//	}
 }
 
 
