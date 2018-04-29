@@ -95,7 +95,7 @@ if ($version['versionNumber'] >= 0x6609) {
             ['r', getExpectedValue(\Imagick::getQuantum() / 4), 0],
             ['a', getExpectedValue(\Imagick::getQuantum()), 0],
         ]
-    ]
+    ];
 }
 
 // The following don't seem stable in lesser versions.
