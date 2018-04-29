@@ -57,7 +57,7 @@ function getExpectedValue($someValue) {
 	}
 
 	$v = Imagick::getVersion();
-	if ($v['versionNumber'] >= 0x689 || $v['versionNumber'] == 0x6753) {
+	if ($v['versionNumber'] >= 0x689) {
 		//this is the new correct behaviour
 		return (intval(round($someValue, 0, PHP_ROUND_HALF_UP)));
 	}
@@ -65,12 +65,6 @@ function getExpectedValue($someValue) {
 	//old behaviour had wrong rounding.
     return (intval(round($someValue, 0, PHP_ROUND_HALF_DOWN)));
 }
-
-//actual 32768 != expected 32767
-// 6.8.7   QUANTUM g is wrong for colorString 'rgb(0, 50%, 0)': actual 32767 != expected 32768
-// 6.7.5.3  ok
-// 6.6.0.9  QUANTUM r is wrong for colorString 'rgb(25%, 25%, 25%)': actual 16383 != expected 16384
-// 6.5.3.10 QUANTUM r is wrong for colorString 'rgb(25%, 25%, 25%)': actual 16383 != expected 16384
 
 $tests = array(
 	array(
