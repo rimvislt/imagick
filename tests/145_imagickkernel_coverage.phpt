@@ -3,7 +3,7 @@ ImagickKernel::fromMatrix test
 --SKIPIF--
 <?php 
 
-$imageMagickRequiredVersion=0x680;
+$imageMagickRequiredVersion = 0x680;
 require_once(dirname(__FILE__) . '/skipif.inc');
  
 ?>
@@ -130,7 +130,7 @@ $matrix2 = array(
 );
 $kernel1 = ImagickKernel::fromMatrix($matrix1, array(0, 0));
 $kernel2 = ImagickKernel::fromMatrix($matrix2, array(0, 0));
-$kernel1->addKernel($kernel2); //todo not working add kernel
+$kernel1->addKernel($kernel2);
 
 $kernelList = $kernel1->separate();
 if (count($kernelList) != 2) {
